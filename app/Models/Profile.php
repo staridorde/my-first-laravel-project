@@ -12,6 +12,13 @@ class Profile extends Model
 
     use HasFactory;
 
+    public function profileImage()
+    {
+        $imagePath = ($this->image) ? $this->image : 'profile/Z5fMqKJkHhQrYzfxSjubKWCUKSXFRF1vSSieKXHY.png';
+
+        return '/storage/' . $imagePath;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
